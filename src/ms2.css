@@ -71,7 +71,7 @@ html {
 
 .btn-sort path,
 .btn-sort rect {
-    fill: "#C4C4C4";
+    fill: #c4c4c4;
 }
 
 .btn-sort:hover path,
@@ -129,9 +129,90 @@ html {
     stroke: #ffffff;
 }
 
+/*.btn-add {*/
+/*    width: 150px;*/
+/*    height: 42px;*/
+/*    margin: 20px auto;*/
+/*    cursor: pointer;*/
+/*}*/
+
 .btn-add {
     width: 150px;
     height: 42px;
     margin: 20px auto;
     cursor: pointer;
+    display: flex;
+    justify-content: center;
+    position: relative;
+    background: #833AE0;
+    border-radius: 71px;
+    align-items: center;
+    color: #ffffff;
+}
+
+.plus {
+    padding: 12px;
+    border-radius: 90px;
+    background: #9953F1;
+    position: absolute;
+    top: 50%;
+    left: 0;
+    transform: translateY(-50%);
+}
+
+.default {
+    animation: lol 1s linear;
+}
+
+.btn-add:hover .plus{
+    left: 50%;
+    transform: translate3d(-50%, -50%, 0);
+    animation: spinHover 1s linear;
+}
+
+.animated{
+    animation:spinClick 1s linear;;
+}
+
+
+@keyframes spinClick {
+    0% {
+        left: 50%;
+        transform: translate3d(0, -50%, 0) rotate(0deg);
+    }
+    70% {
+        left: 45%;
+    }
+    100%{
+        left: 100%;
+        transform: translate3d(-50%, -50%, 0) rotate(360deg);
+    }
+}
+
+@keyframes lol {
+    0% {
+        left: 50%;
+        transform: translate3d(-50%, -50%, 0) rotate(0deg);
+    }
+    70% {
+        left: 55%;
+    }
+    100%{
+        left: 0;
+        transform: translate3d(0, -50%, 0) rotate(360deg);
+    }
+}
+
+@keyframes spinHover {
+    0% {
+        left: 0;
+        transform: translate3d(0, -50%, 0) rotate(0deg);
+    }
+    70% {
+        left: 55%;
+    }
+    100%{
+        left: 50%;
+        transform: translate3d(-50%, -50%, 0) rotate(360deg);
+    }
 }

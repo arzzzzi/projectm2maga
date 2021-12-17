@@ -7,8 +7,15 @@ function init() {
     taskList.addTask()
     const btnAdd = document.querySelector('.btn-add');
     const btnSort = document.querySelector('.btn-sort');
+    const plus = document.querySelector('.plus')
 
     btnAdd.addEventListener('click', () => {
+        plus.classList.remove('default')
+        plus.classList.add('animated')
+        setTimeout(() => {
+            plus.classList.remove('animated')
+            plus.classList.add('default')
+        }, 4000)
         taskList.addTask();
     });
     btnSort.addEventListener('click', event => {
@@ -49,9 +56,9 @@ class TaskList {
     sortList(sortStatus) {
         this.taskList.sort((a, b) => {
             if (a.input.value > b.input.value) {
-                return sortStatus == 'down' ? 1 : -1;
+                return sortStatus === 'down' ? 1 : -1;
             } else if (a.input.value < b.input.value) {
-                return sortStatus == 'down' ? -1 : 1;
+                return sortStatus === 'down' ? -1 : 1;
             }
             return 0;
         })
